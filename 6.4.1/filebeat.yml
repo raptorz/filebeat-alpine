@@ -1,0 +1,25 @@
+filebeat.inputs:
+  - type: log
+    paths:
+      - /home/user/*/logs/*.log
+    fields:
+      docType: app-logs
+    fields_under_root: true
+    ignore_older: 24h
+  
+  - type: log
+    paths:
+      - /var/log/nginx/*.access.log
+    fields:
+      docType: nginx-logs
+    fields_under_root: true
+    ignore_older: 24h
+
+fields:
+  env: ${env}
+  project: ${project}
+fields_under_root: true
+
+output.logstash:
+  hosts: ["${logstash}:5044"]
+  index: "logstash-%{+yyyy.MM.dd}"

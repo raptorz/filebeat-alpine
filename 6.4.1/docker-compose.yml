@@ -1,0 +1,21 @@
+version: '2'
+services:
+  filebeat:
+    image: raptor/filebeat
+    container_name: filebeat
+    restart: always
+    labels:
+      io.rancher.container.pull_image: always
+    environment:
+      - env=QA
+      - logstash=localhost
+      - project=demoproject
+    network_mode: host
+    volumes:
+      - /var/lib/filebeat:/var/lib/filebeat
+      - /var/log/nginx:/var/log/nginx
+      - /home/user/logs:/home/user
+    logging:
+      driver: json-file
+      options:
+        max-file: '5'
