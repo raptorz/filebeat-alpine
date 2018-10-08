@@ -1,7 +1,8 @@
 ## This project is forked from [filebeat-alpine](https://github.com/easonlau02/filebeat-alpine) and added version 6.4.1
 
-* only 38M(6.4.1)
+* only 40M(6.4.1)
 * customizable configuration
+* deprecated syntax in filebeat.yml was modifed
 * built image: [raptor/filebeat](https://hub.docker.com/r/raptor/filebeat/)
 
 ## Basic usage
@@ -36,8 +37,9 @@ Caution: `filebeat.yml` must be owned by `root.root` and attribute is `rw-r--r--
 
 ## 本项目源于 [filebeat-alpine](https://github.com/easonlau02/filebeat-alpine) ，增加了6.4.1版本。
 
-* 仅38M(6.4.1)
-* 可修改配置
+* 仅40M(6.4.1)
+* 可自定义配置
+* 修改默认配置中即将作废的语法
 * 已发布到dockerhub：[raptor/filebeat](https://hub.docker.com/r/raptor/filebeat/)
 
 ## 基本用法
